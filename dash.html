@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cinemacity</title>
+    <!--this is for star blue star in review-->
+
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+    <!-- <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  /> -->
+    <!-- <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper/swiper-bundle.min.css"
+  /> -->
+
+    
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" /> -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Oxygen:400,300,700"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Lora"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+
+  </head>
+  <body style="background-color:black;" onload="pay2()">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark stickey">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="Cinemacity/logo.jpg" alt="logo" class="logo" /> <span
+            class=".d-block d-lg-none hy">Cinemacity</span></a>
+  
+  
+        <button class="navbar-toggler icon" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon "></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
+  
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html" style="color: white">Home</a>
+  
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#abs" style="color: white;">About&nbspUs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html#menu" style="color: white">Genre</a>
+            </li>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html#location" style="color: white">Location</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html#contact"
+                style="color: white">Review&nbsp;</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="dash.html" style="color: white">Dashboard</a>
+            </li>
+  
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html#more" style="color: white">More</a>
+            </li>
+  
+            <li>
+  
+              <a class="nav-link active" href="logout.php" style="color: white">Logout</a>
+  
+            </li>
+  
+            <li>
+              <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                id="bill_show">
+                Bill
+              </button> -->
+  
+  
+              <style>
+          
+  
+  
+                #review{
+                  background-color: #4CAF50; /* Green */
+                  border: none;
+                  color: white;
+                  padding: 20px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 16px;
+                  margin: 4px 2px;
+                  cursor: pointer;
+                   border-radius: 50%;
+                
+                   width: 30%;
+                   box-shadow: 0 12px 16px 0 rgba(204, 197, 197, 0.24), 0 17px 50px 0 rgba(236, 233, 233, 0.19);
+  
+                  
+                  
+                  }
+  
+  
+  
+              </style>
+  
+  
+  
+              <!-- Modal -->
+              <section class="model">
+                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false"
+                  tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                          Your Cart
+                        </h5>
+                        <button onclick="pay()" type="button" class="btn-close" data-bs-dismiss="modal"
+                          aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <!-- <form>
+                          <table align="center" width='80%'>
+                            <caption>Your Order</caption>
+                            <tr>
+                              <td>Chessy Burger</td>
+                              <td id="b11">0</td>
+                            </tr>
+                            <tr>
+                              <td>Beef Burger</td>
+                              <td id="b22">0</td>
+                            </tr>
+                            <tr>
+                              <td>Chicken Burger</td>
+                              <td id="b33">0</td>
+                            </tr>
+                            <tr>
+                              <td>Mutton Burger</td>
+                              <td id="b44">0</td>
+                            </tr>
+                            <tr>
+                              <td>BBQ Pizza</td>
+                              <td id="p11">0</td>
+                            </tr>
+                            <tr>
+                              <td>Special Pizza</td>
+                              <td id="p22">0</td>
+                            </tr>
+                            <tr>
+                              <td>Grill Pizza</td>
+                              <td id="p33">0</td>
+                            </tr>
+                            <tr>
+                              <td>Fajita Pizza</td>
+                              <td id="p44">0</td>
+                            </tr>
+  
+                            <tr>
+                              <td>Egg Sandwich</td>
+                              <td id="s11">0</td>
+                            </tr>
+                            <tr>
+                              <td>Beef Sandwich</td>
+                              <td id="s22">0</td>
+                            </tr>
+                            <tr>
+                              <td>Chessy Sandwich</td>
+                              <td id="s33">0</td>
+                            </tr>
+                            <tr>
+                              <td>NY Sandwich</td>
+                              <td id="s44">0</td>
+                            </tr>
+                            <tr>
+                              <td>Blue Berry Ice Cream</td>
+                              <td id="i11">0</td>
+                            </tr>
+                            <tr>
+                              <td>Totee Fruitee Ice Cream</td>
+                              <td id="i22">0</td>
+                            </tr>
+                            <tr>
+                              <td>Chocalte Ice Cream</td>
+                              <td id="i33">0</td>
+                            </tr>
+                            <tr>
+                              <td>Vanila Ice Cream</td>
+                              <td id="i44">0</td>
+                            </tr>
+                            <tr>
+                              <td>Total: </td>
+                              <td id="bill">0</td>
+                            </tr>
+                            <tr>
+                              <td>
+                              </td>
+                            </tr>
+                          </table>
+                        </form> -->
+  
+                        <!-- BILL MODAL BUTTONS -->
+  
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary" onclick="order()">Confirm Order</button>
+                       
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </li>
+          </ul>
+  
+  
+          <section class="d-flex">
+            <input class="form-control me-2" id="searchbar" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="button" onclick="search()" id="srh">
+              Search
+            </button>
+          </section>
+        </div>
+      </div>
+    </nav>
+      <footer class="panel-footer item" id="more">
+
+            <section id="testimonials" class="col-md-4">
+              <h1 class="comments" >Interactive Dashboard</h1>
+              
+            </section>
+       
+      </footer>
+  
+ 
+
+      <iframe title="project" width="100%" height="100%" src="https://app.powerbi.com/view?r=eyJrIjoiYWUyMWIyMTktODgyYS00MzEwLTlmMjktY2ZjM2M3Mzk2MTAwIiwidCI6ImQ5NDkzMGMwLTg4NmMtNGQwYS05YzlkLTU2OTk5NjRiNzBjZCIsImMiOjl9&pageName=ReportSection" frameborder="0" allowFullScreen="true"></iframe>
+
+
+
+
+
+
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+       
+      let b1 = sessionStorage.getItem('b1');
+      let b2 = sessionStorage.getItem('b2');
+      let b3 = sessionStorage.getItem('b3');
+      let b4 = sessionStorage.getItem('b4');
+      let totalb = sessionStorage.getItem('totalb');
+      
+      if(b1===null){
+      document.getElementById('b11').innerText = 0;
+        
+      }
+      else{
+      document.getElementById('b11').innerText = b1;
+      document.getElementById('b1').value = b1;
+
+        
+      }
+      if(b2===null){
+      document.getElementById('b22').innerText = 0;
+        
+      }
+      else{
+      document.getElementById('b22').innerText = b2;
+      document.getElementById('b2').value = b2;
+
+        
+      }
+      if(b3===null){
+      document.getElementById('b33').innerText = 0;
+        
+      }
+      else{
+      document.getElementById('b33').innerText = b3;
+      document.getElementById('b3').value = b3;
+
+        
+      }
+      if(b4===null){
+      document.getElementById('b44').innerText = 0;
+        
+      }
+      else{
+      document.getElementById('b44').innerText = b4;
+      document.getElementById('b4').value = b4;
+
+      }
+      if(totalb===null){
+      document.getElementById('bill').innerText = 0;
+        
+      }
+      else{
+      document.getElementById('bill').innerText = totalb;
+        
+      }
+      let p1 = sessionStorage.getItem('p1');
+      let p2 = sessionStorage.getItem('p2');
+      let p3 = sessionStorage.getItem('p3');
+      let p4 = sessionStorage.getItem('p4');
+      let totalp = sessionStorage.getItem('totalp');
+     
+      if(p1===null){
+      document.getElementById('p11').innerText = 0;
+        
+      }
+      else{
+      document.getElementById('p11').innerText = p1;
+      // document.getElementById('p1').value = p1;
+
+        
+      }
+      if(p2===null){
+      document.getElementById('p22').innerText = 0;
+        
+      }
+      else{
+      document.getElementById('p22').innerText = p2;
+      // document.getElementById('p2').value = p2;
+
+        
+      }
+      if(p3===null){
+      document.getElementById('p33').innerText = 0;
+        
+      }
+      else{
+      document.getElementById('p33').innerText = p3;
+      // document.getElementById('p3').value = p3;
+
+        
+      }
+      if(p4===null){
+      document.getElementById('p44').innerText = 0;
+        
+      }
+      else{
+      document.getElementById('p44').innerText = p4;
+      // document.getElementById('p4').value = p4;
+
+      }
+      if(totalp===null){
+      document.getElementById('bill').innerText = 0;
+        
+      }
+      else{
+      document.getElementById('bill').innerText = totalp;
+      document.getElementById('bill').innerText = totalp;
+
+        
+      }
+
+
+
+
+
+      /////////////////////////////////////////////////////////
+      let i1 = sessionStorage.getItem('i1');
+      let i2 = sessionStorage.getItem('i2');
+      let i3 = sessionStorage.getItem('i3');
+      let i4 = sessionStorage.getItem('i4');
+      let totali = sessionStorage.getItem('totali');
+      
+
+      
+      if(i1===null){
+      document.getElementById('i11').innerText = 0;
+
+        
+      }
+      else{
+      document.getElementById('i11').innerText = i1;
+      // document.getElementById('i1').value = i1;
+
+
+
+        
+      }
+      if(i2===null){
+      document.getElementById('i22').innerText = 0;
+     
+        
+      }
+      else{
+      document.getElementById('i22').innerText = i2;
+      // document.getElementById('i2').value = i2;
+
+      
+
+        
+      }
+      if(i3===null){
+      document.getElementById('i33').innerText = 0;
+     
+
+        
+      }
+      else{
+      document.getElementById('i33').innerText = i3;
+      // document.getElementById('i3').value = i3;
+
+
+        
+      }
+      if(i4===null){
+      document.getElementById('i44').innerText = 0;
+
+        
+      }
+      else{
+      document.getElementById('i44').innerText = i4;
+      // document.getElementById('i4').value = i4;
+
+
+      }
+      if(totali===null){
+      document.getElementById('bill').innerText = 0;
+      // document.getElementById('bill').innerText = totali;
+      // alert(totali+"hy")
+
+
+
+        
+      }
+      else{
+      document.getElementById('bill').innerHTML = totali;
+      // alert(totali+"ji")
+
+      }
+      
+
+      let s1 = sessionStorage.getItem('s1');
+      let s2 = sessionStorage.getItem('s2');
+      let s3 = sessionStorage.getItem('s3');
+      let s4 = sessionStorage.getItem('s4');
+      let totals = sessionStorage.getItem('totals');
+      
+
+      
+      if(s1===null){
+      document.getElementById('s11').innerText = 0;
+
+        
+      }
+      else{
+      document.getElementById('s11').innerText = s1;
+      // document.getElementById('s1').value = s1;
+
+
+
+        
+      }
+      if(s2===null){
+      document.getElementById('s22').innerText = 0;
+     
+        
+      }
+      else{
+      document.getElementById('s22').innerText = s2;
+      // document.getElementById('s2').value = s2;
+
+      
+
+        
+      }
+      if(s3===null){
+      document.getElementById('s33').innerText = 0;
+     
+
+        
+      }
+      else{
+      document.getElementById('s33').innerText = s3;
+      // document.getElementById('s3').value = s3;
+
+
+        
+      }
+      if(s4===null){
+      document.getElementById('s44').innerText = 0;
+
+        
+      }
+      else{
+      document.getElementById('s44').innerText = s4;
+      // document.getElementById('s4').value = s4;
+
+
+      }
+      if(totals===null){
+      document.getElementById('bill').innerText = 0;
+
+
+        
+      }
+      else{
+      document.getElementById('bill').innerText = totals;
+      
+
+        
+      }
+      
+
+      
+      // document.getElementById('b22').innerText = b22;
+      // document.getElementById('p11').innerText = p1;
+      // document.getElementById('s11').innerText = s1;
+      // document.getElementById('i33').innerText = i3;
+      // document.getElementById('bill').innerText = total;
+
+  </script>
+
+   
+  </body>
+</html>
+
+
